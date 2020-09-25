@@ -14,11 +14,7 @@ class DiaryModel {
   }
 
   static List<DiaryModel> fromDiaryList(List diaryList) {
-    List<DiaryModel> diaries = [];
-    for (Map<String, dynamic> diary in diaryList) {
-      diaries.add(DiaryModel.fromJson(diary));
-    }
-    return diaries;
+    return diaryList.map((diary) => DiaryModel.fromJson(diary)).toList();
   }
 
   Map<String, dynamic> toJson() {
